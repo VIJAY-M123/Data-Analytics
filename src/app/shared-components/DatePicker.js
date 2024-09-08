@@ -23,6 +23,7 @@ const BasicDatePicker = ({
   openTo,
   dateTime,
   dateProps,
+  size,
 }) => {
   const pickerProps = {
     ...field,
@@ -42,7 +43,7 @@ const BasicDatePicker = ({
   const props = {
     ...pickerProps,
     slotProps: {
-      textField: { error, helperText, required, fullWidth: true },
+      textField: { error, helperText, required, fullWidth: true, size: size && size },
       popper: { sx: { zIndex: 10000 } },
       actionBar: { actions: ['clear', 'accept'] },
     },

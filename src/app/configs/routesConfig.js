@@ -19,6 +19,7 @@ import CustomerLoginMasterConfig from '../main/customer-login/CustomerLoginMaste
 import UserRoleConfig from '../main/user-role/UserRoleConfig';
 import AgencyMoveMasterConfig from '../main/agency-move/AgencyMoveMasterConfig';
 import MarketingConfig from '../main/marketing-anaytics/marketingConfig';
+import LogisticConfig from '../main/logistics-analytics/logisticsConfig';
 
 const routeConfigs = [
   DashboardConfig,
@@ -37,6 +38,7 @@ const routeConfigs = [
   CustomerLoginMasterConfig,
   AgencyMoveMasterConfig,
   MarketingConfig,
+  LogisticConfig,
 ];
 
 const routes = [

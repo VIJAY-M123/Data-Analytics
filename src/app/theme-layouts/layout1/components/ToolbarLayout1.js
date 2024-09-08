@@ -30,6 +30,8 @@ function ToolbarLayout1(props) {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
 
+  console.log('ToolbarLayout1', user);
+
   return (
     <ThemeProvider theme={toolbarTheme}>
       <AppBar

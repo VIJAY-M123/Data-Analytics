@@ -37,6 +37,7 @@ function AuthProvider({ children }) {
     });
 
     jwtService.on('onLogin', (user) => {
+      console.log('onLogin', user);
       success(user, 'Signed in');
     });
 
@@ -65,7 +66,7 @@ function AuthProvider({ children }) {
       }
 
       Promise.all([
-        dispatch(setUser(user)),
+        dispatch(setUser([user])),
         // jwtService.getUserAgencies(user),
         // You can receive data in here before app initialization
       ]).then((values) => {

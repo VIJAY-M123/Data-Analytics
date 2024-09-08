@@ -8,6 +8,7 @@ import settingsConfig from 'app/configs/settingsConfig';
 import jwtService from '../auth/services/jwtService';
 
 export const setUser = createAsyncThunk('user/setUser', async (user, { dispatch, getState }) => {
+  console.log('userSlice', user);
   /*
     You can redirect the logged-in user to a specific route depending on his role
   */
@@ -17,11 +18,11 @@ export const setUser = createAsyncThunk('user/setUser', async (user, { dispatch,
     settingsConfig.loginRedirectUrl = user.loginRedirectUrl; // for example 'apps/academy'
   }
 
-  const userData = { ...user[0] };
+  const userData = { ...user[0] }; //
   const data = {
-    displayName: userData.user_name,
+    displayName: userData.username,
     photoURL: '', // 'https://picsum.photos/200/200',
-    email: '',
+    email: userData.email,
     shortcuts: ['apps.calendar', 'apps.mailbox', 'apps.contacts', 'apps.tasks'],
   };
   const modifiedUser = { data: { displayName: 'test', ...userData, ...data }, role: 'admin' };

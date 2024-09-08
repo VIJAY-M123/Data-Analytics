@@ -255,6 +255,7 @@ export default function EmailAnalytics() {
                   label="From Date"
                   error={!!errors.fromDate}
                   helperText={errors.fromDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -273,6 +274,7 @@ export default function EmailAnalytics() {
                   label="To Date"
                   error={!!errors.toDate}
                   helperText={errors.toDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -298,7 +300,7 @@ export default function EmailAnalytics() {
         <Grid item xs={12} md={6} lg={3}>
           <Card
             sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
+              background: 'linear-gradient(145deg, #f1f5f9, #ffffff)',
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
@@ -469,13 +471,7 @@ export default function EmailAnalytics() {
               </Grid>
             </Grid>
             <Grid item xs={12} md={9}>
-              <Card
-                sx={{
-                  background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-                  boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-                  // padding: '16px', // Optional: padding for content inside the card
-                }}
-              >
+              <Card>
                 <CardContent>
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={8}>
