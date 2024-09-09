@@ -9,9 +9,33 @@ import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
 import MarkChatReadIcon from '@mui/icons-material/MarkChatRead';
 import SmsFailedIcon from '@mui/icons-material/SmsFailed';
 import ReactApexChart from 'react-apexcharts';
+import * as yup from 'yup';
+import { motion } from 'framer-motion';
 
-const schema = {};
-const defaultValues = {};
+const schema = yup.object().shape({
+  fromDate: yup
+    .date()
+    .nullable()
+    .required('You must Select from Date')
+    .typeError('You must enter a valid date')
+    .max(new Date(), 'Future dates are not allowed'),
+  toDate: yup
+    .date()
+    .nullable()
+    .required('You must select to date')
+    .typeError('You must enter a valid date')
+    .test((value, ctx) => {
+      const { fromDate } = ctx.parent;
+      if (value && fromDate > value) {
+        return ctx.createError({ message: 'End Date must be greater than Start Date' });
+      }
+      return true;
+    }),
+});
+const defaultValues = {
+  fromDate: null,
+  toDate: null,
+};
 
 export default function SmsTrackingReport() {
   const {
@@ -138,9 +162,13 @@ export default function SmsTrackingReport() {
     },
   };
 
+  const onSubmit = (data) => {
+    console.log('data', data);
+  };
+
   return (
     <div>
-      <form className="mb-12">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="mb-12">
         <Grid container spacing={2}>
           <Grid item xs={12} lg={5.2}>
             <Typography variant="h6" className="font-bold mb-12">
@@ -161,6 +189,7 @@ export default function SmsTrackingReport() {
                   label="From Date"
                   error={!!errors.fromDate}
                   helperText={errors.fromDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -179,6 +208,7 @@ export default function SmsTrackingReport() {
                   label="To Date"
                   error={!!errors.toDate}
                   helperText={errors.toDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -194,7 +224,11 @@ export default function SmsTrackingReport() {
               marginTop: '-15px',
             }}
           >
-            <Button variant="contained" className="rounded-md">
+            <Button
+              variant="contained"
+              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              type="submit"
+            >
               Apply
             </Button>
           </Grid>
@@ -208,6 +242,10 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -231,6 +269,10 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -254,6 +296,10 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -278,6 +324,10 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -302,6 +352,10 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -326,10 +380,14 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
-            className="flex justify-center "
+            className="flex justify-center"
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
-              <Typography className="flex justify-center">Message By Status</Typography>
+              <Typography className="flex justify-center font-bold">Message By Status</Typography>
               <ReactApexChart
                 options={optionsdount}
                 series={seriesdount}
@@ -346,9 +404,13 @@ export default function SmsTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
-              <Typography className="flex justify-start">Message Performance</Typography>
+              <Typography className="flex justify-start font-bold">Message Performance</Typography>
               <ReactApexChart options={optionsline} series={seriesline} type="line" height={290} />
             </CardContent>
           </Card>

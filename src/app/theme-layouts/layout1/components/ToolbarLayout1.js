@@ -7,11 +7,8 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectFuseCurrentLayoutConfig, selectToolbarTheme } from 'app/store/fuse/settingsSlice';
 import { selectFuseNavbar } from 'app/store/fuse/navbarSlice';
-import { IconButton } from '@mui/material';
-import { HomeOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { selectUser } from 'app/store/userSlice';
-import QuickPanelToggleButton from 'app/theme-layouts/shared-components/quickPanel/QuickPanelToggleButton';
 import AdjustFontSize from '../../shared-components/AdjustFontSize';
 import FullScreenToggle from '../../shared-components/FullScreenToggle';
 // import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
@@ -79,15 +76,15 @@ function ToolbarLayout1(props) {
             <AdjustFontSize />
 
             <FullScreenToggle />
-            <QuickPanelToggleButton />
+            {/* <QuickPanelToggleButton /> */}
             <NavigationSearch />
-            <IconButton
+            {/* <IconButton
               className="w-40 h-40 text-md"
               size="large"
               onClick={() => navigate('/home')}
             >
               <HomeOutlined />
-            </IconButton>
+            </IconButton> */}
 
             {/* <Hidden lgUp>
               <ChatPanelToggleButton />

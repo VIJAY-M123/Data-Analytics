@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Grid, Typography } from '@mui/material';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import QuickreplyIcon from '@mui/icons-material/Quickreply';
+import * as yup from 'yup';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import Counter from 'app/shared-components/Counter';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
@@ -11,9 +12,32 @@ import { Controller, useForm } from 'react-hook-form';
 import BasicDatePicker from 'app/shared-components/DatePicker';
 import { yupResolver } from '@hookform/resolvers/yup';
 import ReactApexChart from 'react-apexcharts';
+import { motion } from 'framer-motion';
 
-const schema = {};
-const defaultValues = {};
+const schema = yup.object().shape({
+  fromDate: yup
+    .date()
+    .nullable()
+    .required('You must Select from Date')
+    .typeError('You must enter a valid date')
+    .max(new Date(), 'Future dates are not allowed'),
+  toDate: yup
+    .date()
+    .nullable()
+    .required('You must select to date')
+    .typeError('You must enter a valid date')
+    .test((value, ctx) => {
+      const { fromDate } = ctx.parent;
+      if (value && fromDate > value) {
+        return ctx.createError({ message: 'End Date must be greater than Start Date' });
+      }
+      return true;
+    }),
+});
+const defaultValues = {
+  fromDate: null,
+  toDate: null,
+};
 
 export default function EmailAnalytics() {
   const {
@@ -232,9 +256,13 @@ export default function EmailAnalytics() {
       },
     },
   };
+
+  const onSubmit = (data) => {
+    console.log('Data', data);
+  };
   return (
     <div className="">
-      <form className="mb-12">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="mb-12">
         <Grid container spacing={2}>
           <Grid item xs={12} lg={5.2}>
             <Typography variant="h6" className="font-bold mb-12">
@@ -290,7 +318,11 @@ export default function EmailAnalytics() {
               marginTop: '-15px',
             }}
           >
-            <Button variant="contained" className="rounded-md">
+            <Button
+              variant="contained"
+              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              type="submit"
+            >
               Apply
             </Button>
           </Grid>
@@ -300,10 +332,14 @@ export default function EmailAnalytics() {
         <Grid item xs={12} md={6} lg={3}>
           <Card
             sx={{
-              background: 'linear-gradient(145deg, #f1f5f9, #ffffff)',
+              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -327,6 +363,10 @@ export default function EmailAnalytics() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -350,6 +390,10 @@ export default function EmailAnalytics() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -374,6 +418,10 @@ export default function EmailAnalytics() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -403,6 +451,10 @@ export default function EmailAnalytics() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.5, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -427,6 +479,10 @@ export default function EmailAnalytics() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.5, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -451,6 +507,10 @@ export default function EmailAnalytics() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.5, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -471,11 +531,21 @@ export default function EmailAnalytics() {
               </Grid>
             </Grid>
             <Grid item xs={12} md={9}>
-              <Card>
+              <Card
+                sx={{
+                  background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
+                  boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
+                  // padding: '16px', // Optional: padding for content inside the card
+                }}
+                component={motion.div}
+                initial={{ x: 500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.5, bounceDamping: 0 }}
+              >
                 <CardContent>
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={8}>
-                      <Typography>Main Campaign Report</Typography>
+                      <Typography className="font-bold">Main Campaign Report</Typography>
                     </Grid>
                     <Grid item xs={12} md={4} className="flex gap-6 justify-end">
                       <Button

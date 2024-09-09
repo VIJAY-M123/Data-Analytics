@@ -6,11 +6,35 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import TtyIcon from '@mui/icons-material/Tty';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import PhoneMissedIcon from '@mui/icons-material/PhoneMissed';
+import * as yup from 'yup';
 import PhoneDisabledIcon from '@mui/icons-material/PhoneDisabled';
 import ReactApexChart from 'react-apexcharts';
+import { motion } from 'framer-motion';
 
-const schema = {};
-const defaultValues = {};
+const schema = yup.object().shape({
+  fromDate: yup
+    .date()
+    .nullable()
+    .required('You must Select from Date')
+    .typeError('You must enter a valid date')
+    .max(new Date(), 'Future dates are not allowed'),
+  toDate: yup
+    .date()
+    .nullable()
+    .required('You must select to date')
+    .typeError('You must enter a valid date')
+    .test((value, ctx) => {
+      const { fromDate } = ctx.parent;
+      if (value && fromDate > value) {
+        return ctx.createError({ message: 'End Date must be greater than Start Date' });
+      }
+      return true;
+    }),
+});
+const defaultValues = {
+  fromDate: null,
+  toDate: null,
+};
 
 export default function CallTrackingReport() {
   const {
@@ -149,9 +173,13 @@ export default function CallTrackingReport() {
     ],
   };
 
+  const onSubmit = (data) => {
+    console.log('data', data);
+  };
+
   return (
     <div className="">
-      <form className="mb-12">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="mb-12">
         <Grid container spacing={2}>
           <Grid item xs={12} lg={5.2}>
             <Typography variant="h6" className="font-bold mb-12">
@@ -172,6 +200,7 @@ export default function CallTrackingReport() {
                   label="From Date"
                   error={!!errors.fromDate}
                   helperText={errors.fromDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -190,6 +219,7 @@ export default function CallTrackingReport() {
                   label="To Date"
                   error={!!errors.toDate}
                   helperText={errors.toDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -205,7 +235,11 @@ export default function CallTrackingReport() {
               marginTop: '-15px',
             }}
           >
-            <Button variant="contained" className="rounded-md">
+            <Button
+              variant="contained"
+              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              type="submit"
+            >
               Apply
             </Button>
           </Grid>
@@ -219,6 +253,10 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -242,6 +280,10 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -265,6 +307,10 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -289,6 +335,10 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -313,6 +363,10 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -337,9 +391,13 @@ export default function CallTrackingReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
-              <Typography>Total Calls</Typography>
+              <Typography className="font-bold">Total Calls</Typography>
               <ReactApexChart
                 options={totalCallOption}
                 series={totalCallSeries}
@@ -357,9 +415,13 @@ export default function CallTrackingReport() {
               // padding: '16px', // Optional: padding for content inside the card
             }}
             className="flex justify-center"
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
-              <Typography>Call Distribution</Typography>
+              <Typography className="font-bold">Call Distribution</Typography>
               <ReactApexChart
                 options={distributionOption}
                 series={distributionSeries}

@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 import Counter from 'app/shared-components/Counter';
+import { motion } from 'framer-motion';
 import ReactApexChart from 'react-apexcharts';
 
 const seriesstack = [
@@ -277,7 +278,12 @@ export default function Inventory() {
         <Grid item xs={12} md={2.5}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Card>
+              <Card
+                component={motion.div}
+                initial={{ x: -500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
+              >
                 <CardContent>
                   <Typography className="w-full flex justify-center font-bold">
                     Transport Overview
@@ -293,7 +299,12 @@ export default function Inventory() {
               </Card>
             </Grid>
             <Grid item xs={12}>
-              <Card>
+              <Card
+                component={motion.div}
+                initial={{ x: -500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
+              >
                 <CardContent>
                   <Typography className="w-full flex justify-center font-bold">
                     Transport Maintenances
@@ -315,7 +326,12 @@ export default function Inventory() {
         <Grid item xs={12} md={2.5}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Card>
+              <Card
+                component={motion.div}
+                initial={{ x: -500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
+              >
                 <CardContent>
                   <Typography className="w-full flex justify-center font-bold">
                     Logistics Income Overview
@@ -331,7 +347,12 @@ export default function Inventory() {
               </Card>
             </Grid>
             <Grid item xs={12}>
-              <Card>
+              <Card
+                component={motion.div}
+                initial={{ x: -500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
+              >
                 <CardContent>
                   <Typography className="w-full flex justify-center font-bold">
                     vs Last One Month
@@ -349,7 +370,12 @@ export default function Inventory() {
           </Grid>
         </Grid>
         <Grid item xs={12} md={7}>
-          <Card>
+          <Card
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
+          >
             <CardContent>
               <Typography className="font-bold">
                 Cargo Type & Corresponding Weight Metrics
@@ -359,7 +385,12 @@ export default function Inventory() {
           </Card>
         </Grid>
         <Grid item xs={12} md={5}>
-          <Card>
+          <Card
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
+          >
             <CardContent>
               <Typography className="font-bold">Risk Assessment based on Cargo Types</Typography>
               <ReactApexChart options={openOption} series={openSeries} type="bar" height={280} />
@@ -367,7 +398,12 @@ export default function Inventory() {
           </Card>
         </Grid>
         <Grid item xs={12} md={7}>
-          <Card>
+          <Card
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
+          >
             <CardContent>
               <Typography className="font-bold">
                 Comprehensive Metrics on Distance & Expenditure

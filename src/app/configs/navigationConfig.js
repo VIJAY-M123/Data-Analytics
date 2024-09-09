@@ -134,7 +134,7 @@ const navigationConfig = [
         id: 'logistic',
         title: 'Logistics Analytics',
         type: 'collapse',
-        icon: 'material-outline:analytics',
+        icon: 'material-outline:directions_boat',
         // translate: 'Marketing 123rtrwrw',
         children: [
           {

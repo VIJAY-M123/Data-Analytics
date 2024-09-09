@@ -9,11 +9,35 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import PhoneMissedIcon from '@mui/icons-material/PhoneMissed';
 import PhoneDisabledIcon from '@mui/icons-material/PhoneDisabled';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
+import * as yup from 'yup';
 import SwapCallsIcon from '@mui/icons-material/SwapCalls';
 import ReactApexChart from 'react-apexcharts';
+import { motion } from 'framer-motion';
 
-const schema = {};
-const defaultValues = {};
+const schema = yup.object().shape({
+  fromDate: yup
+    .date()
+    .nullable()
+    .required('You must Select from Date')
+    .typeError('You must enter a valid date')
+    .max(new Date(), 'Future dates are not allowed'),
+  toDate: yup
+    .date()
+    .nullable()
+    .required('You must select to date')
+    .typeError('You must enter a valid date')
+    .test((value, ctx) => {
+      const { fromDate } = ctx.parent;
+      if (value && fromDate > value) {
+        return ctx.createError({ message: 'End Date must be greater than Start Date' });
+      }
+      return true;
+    }),
+});
+const defaultValues = {
+  fromDate: null,
+  toDate: null,
+};
 
 export default function CallCampaignReport() {
   const {
@@ -169,9 +193,13 @@ export default function CallCampaignReport() {
       },
     ],
   };
+
+  const onSubmit = (data) => {
+    console.log('data', data);
+  };
   return (
     <div className="">
-      <form className="mb-12">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="mb-12">
         <Grid container spacing={2}>
           <Grid item xs={12} lg={5.2}>
             <Typography variant="h6" className="font-bold mb-12">
@@ -192,6 +220,7 @@ export default function CallCampaignReport() {
                   label="From Date"
                   error={!!errors.fromDate}
                   helperText={errors.fromDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -210,6 +239,7 @@ export default function CallCampaignReport() {
                   label="To Date"
                   error={!!errors.toDate}
                   helperText={errors.toDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -225,7 +255,11 @@ export default function CallCampaignReport() {
               marginTop: '-15px',
             }}
           >
-            <Button variant="contained" className="rounded-md">
+            <Button
+              variant="contained"
+              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              type="submit"
+            >
               Apply
             </Button>
           </Grid>
@@ -239,6 +273,10 @@ export default function CallCampaignReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -262,6 +300,10 @@ export default function CallCampaignReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -285,6 +327,10 @@ export default function CallCampaignReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -309,6 +355,10 @@ export default function CallCampaignReport() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <div className="flex w-full gap-6">
@@ -338,6 +388,10 @@ export default function CallCampaignReport() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.3, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -362,6 +416,10 @@ export default function CallCampaignReport() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.3, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -386,6 +444,10 @@ export default function CallCampaignReport() {
                       boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                       // padding: '16px', // Optional: padding for content inside the card
                     }}
+                    component={motion.div}
+                    initial={{ x: -500 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.3, bounceDamping: 0 }}
                   >
                     <CardContent>
                       <div className="flex w-full gap-6">
@@ -413,9 +475,13 @@ export default function CallCampaignReport() {
                   // padding: '16px', // Optional: padding for content inside the card
                 }}
                 className="flex justify-center items-center h-[350px]"
+                component={motion.div}
+                initial={{ x: 500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
               >
                 <CardContent>
-                  <Typography className="flex justify-center">Call Status</Typography>
+                  <Typography className="flex justify-center font-bold">Call Status</Typography>
                   <ReactApexChart
                     options={optionsdount}
                     series={seriesdount}
@@ -432,11 +498,15 @@ export default function CallCampaignReport() {
                   boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
                   // padding: '16px', // Optional: padding for content inside the card
                 }}
+                component={motion.div}
+                initial={{ x: 500 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3, bounceDamping: 0 }}
               >
                 <CardContent>
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <Typography>Call Categories</Typography>
+                      <Typography className="font-bold">Call Categories</Typography>
                     </Grid>
                     <Grid item xs={12} md={6} className="flex gap-6 justify-end">
                       <Button

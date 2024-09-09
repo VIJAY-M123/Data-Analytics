@@ -15,9 +15,33 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import CommentIcon from '@mui/icons-material/Comment';
 import ReactApexChart from 'react-apexcharts';
+import * as yup from 'yup';
+import { motion } from 'framer-motion';
 
-const schema = {};
-const defaultValues = {};
+const schema = yup.object().shape({
+  fromDate: yup
+    .date()
+    .nullable()
+    .required('You must Select from Date')
+    .typeError('You must enter a valid date')
+    .max(new Date(), 'Future dates are not allowed'),
+  toDate: yup
+    .date()
+    .nullable()
+    .required('You must select to date')
+    .typeError('You must enter a valid date')
+    .test((value, ctx) => {
+      const { fromDate } = ctx.parent;
+      if (value && fromDate > value) {
+        return ctx.createError({ message: 'End Date must be greater than Start Date' });
+      }
+      return true;
+    }),
+});
+const defaultValues = {
+  fromDate: null,
+  toDate: null,
+};
 
 export default function SocialMediaCampaign() {
   const {
@@ -76,12 +100,12 @@ export default function SocialMediaCampaign() {
       width: 0,
       colors: ['#fff'],
     },
-    title: {
-      text: 'Social Values',
-      style: {
-        color: 'var(--text-primary)',
-      },
-    },
+    // title: {
+    //   text: 'Social Values',
+    //   style: {
+    //     color: 'var(--text-primary)',
+    //   },
+    // },
     xaxis: {
       categories: ['01-02-2023', '01-03-2023', '01-04-2023', '01-05-2023', '01-06-2023'],
       labels: {
@@ -126,9 +150,13 @@ export default function SocialMediaCampaign() {
     },
   };
 
+  const onSubmit = (data) => {
+    console.log('data', data);
+  };
+
   return (
     <div>
-      <form className="mb-12">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="mb-12">
         <Grid container spacing={2}>
           <Grid item xs={12} lg={5.2}>
             <Typography variant="h6" className="font-bold mb-12">
@@ -149,6 +177,7 @@ export default function SocialMediaCampaign() {
                   label="From Date"
                   error={!!errors.fromDate}
                   helperText={errors.fromDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -167,6 +196,7 @@ export default function SocialMediaCampaign() {
                   label="To Date"
                   error={!!errors.toDate}
                   helperText={errors.toDate?.message}
+                  size="small"
                 />
               )}
             />
@@ -182,7 +212,11 @@ export default function SocialMediaCampaign() {
               marginTop: '-15px',
             }}
           >
-            <Button variant="contained" className="rounded-md">
+            <Button
+              variant="contained"
+              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              type="submit"
+            >
               Apply
             </Button>
           </Grid>
@@ -196,6 +230,10 @@ export default function SocialMediaCampaign() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <Grid container spacing={2}>
@@ -203,7 +241,7 @@ export default function SocialMediaCampaign() {
                   <TwitterIcon />
                 </Grid>
                 <Grid item xs={12} md={10}>
-                  <Typography>Twitter</Typography>
+                  <Typography className="font-bold">Twitter</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card className="flex justify-center">
@@ -268,6 +306,10 @@ export default function SocialMediaCampaign() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <Grid container spacing={2}>
@@ -275,7 +317,7 @@ export default function SocialMediaCampaign() {
                   <InstagramIcon />
                 </Grid>
                 <Grid item xs={12} md={10}>
-                  <Typography>Instagram</Typography>
+                  <Typography className="font-bold">Instagram</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card className="flex justify-center">
@@ -340,6 +382,10 @@ export default function SocialMediaCampaign() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <Grid container spacing={2}>
@@ -347,7 +393,7 @@ export default function SocialMediaCampaign() {
                   <LinkedInIcon />
                 </Grid>
                 <Grid item xs={12} md={10}>
-                  <Typography>Linked In</Typography>
+                  <Typography className="font-bold">Linked In</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card className="flex justify-center">
@@ -412,6 +458,10 @@ export default function SocialMediaCampaign() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
               <Grid container spacing={2}>
@@ -419,17 +469,10 @@ export default function SocialMediaCampaign() {
                   <FacebookIcon />
                 </Grid>
                 <Grid item xs={12} md={10}>
-                  <Typography>Facebook</Typography>
+                  <Typography className="font-bold">Facebook</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Card
-                    className="flex justify-center"
-                    sx={{
-                      background: 'linear-gradient(145deg, #ffffff, #d9dde0)',
-                      // boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-                      // padding: '16px', // Optional: padding for content inside the card
-                    }}
-                  >
+                  <Card className="flex justify-center">
                     <CardContent>
                       <Typography className="flex justify-center">
                         <PersonIcon />
@@ -491,9 +534,14 @@ export default function SocialMediaCampaign() {
               boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
               // padding: '16px', // Optional: padding for content inside the card
             }}
+            component={motion.div}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3, bounceDamping: 0 }}
           >
             <CardContent>
-              <ReactApexChart options={optionsstack} series={seriesstack} type="bar" height={255} />
+              <Typography className="font-bold">Social Values</Typography>
+              <ReactApexChart options={optionsstack} series={seriesstack} type="bar" height={235} />
             </CardContent>
           </Card>
         </Grid>
