@@ -1,19 +1,19 @@
 const useAppIconText = (type = 'text') => {
   const icons = {
-    crm: [
-      'assets/images/logo/logo-crm-text.svg',
-      'assets/images/logo/logo-zealit.svg',
-      'Zealit - CRM',
-    ],
-    shalx: [
-      'assets/images/logo/logo-shalx-text.svg',
-      'assets/images/logo/logo-shalx.svg',
-      'Zealit - LTR',
-    ],
+    // crm: [
+    //   'assets/images/logo/logo-crm-text.svg',
+    //   'assets/images/logo/logo-zealit.svg',
+    //   'Zealit - CRM',
+    // ],
+    // shalx: [
+    //   'assets/images/logo/logo-shalx-text.svg',
+    //   'assets/images/logo/logo-shalx.svg',
+    //   'Zealit - LTR',
+    // ],
     zealit: [
       'assets/images/logo/modifiedLogo.png',
-      'assets/images/logo/logo-zealit.svg',
-      'Zealit 2.0',
+      'assets/images/image/Analytics_Logo.png',
+      'Data Analytics',
     ],
   };
 

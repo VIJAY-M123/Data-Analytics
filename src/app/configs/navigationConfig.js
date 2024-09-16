@@ -13,7 +13,7 @@ const navigationConfig = [
   {
     id: 'dashboards',
     title: 'Dashboards',
-    subtitle: 'Unique dashboard designs',
+    subtitle: 'Unique Data Visualization',
     type: 'group',
     icon: 'heroicons-outline:home',
     translate: 'DASHBOARDS',
@@ -142,6 +142,22 @@ const navigationConfig = [
             title: 'Inventory Analytics',
             type: 'item',
             url: 'logistic/inventory',
+            // end: true,
+          },
+        ],
+      },
+      {
+        id: 'retail',
+        title: 'Retail Analytics',
+        type: 'collapse',
+        icon: 'heroicons-outline:shopping-cart',
+        // translate: 'Marketing 123rtrwrw',
+        children: [
+          {
+            id: 'retail.retail',
+            title: 'Sentimental Analytics',
+            type: 'item',
+            url: 'retail/sentimental',
             // end: true,
           },
         ],
