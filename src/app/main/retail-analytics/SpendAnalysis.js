@@ -159,7 +159,7 @@ export default function SpendAnalysis() {
                   </Typography>
                 </div>
                 <div className="flex items-center">
-                  <VolunteerActivismIcon sx={{ height: 50, width: 50, color: '#000000' }} />
+                  <VolunteerActivismIcon sx={{ height: 50, width: 50 }} />
                 </div>
               </div>
             </CardContent>

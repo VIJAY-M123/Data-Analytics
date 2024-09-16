@@ -343,7 +343,7 @@ export default function Sentimental() {
                   </Typography>
                 </div>
                 <div className="flex items-center">
-                  <ThumbDownAltIcon sx={{ height: 50, width: 50, color: '#000000' }} />
+                  <ThumbDownAltIcon sx={{ height: 50, width: 50 }} />
                 </div>
               </div>
             </CardContent>

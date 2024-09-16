@@ -158,7 +158,7 @@ export default function SupplyPerformance() {
                   </Typography>
                 </div>
                 <div className="flex items-center">
-                  <MonetizationOnIcon sx={{ height: 50, width: 50, color: '#000000' }} />
+                  <MonetizationOnIcon sx={{ height: 50, width: 50 }} />
                 </div>
               </div>
             </CardContent>

@@ -111,11 +111,11 @@ class JwtService extends FuseUtils.EventEmitter {
     });
   };
 
-  updateUserData = (user) => {
-    return axios.post(jwtServiceConfig.updateUser, {
-      user,
-    });
-  };
+  // updateUserData = (user) => {
+  //   return axios.post(jwtServiceConfig.updateUser, {
+  //     user,
+  //   });
+  // };
 
   // getUserAgencies = (user) => {
   //   return new Promise((resolve, reject) => {

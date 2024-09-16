@@ -175,7 +175,7 @@ function SignInPage() {
       <Box
         className="relative hidden md:flex flex-auto items-center justify-center h-full  lg:px-112 overflow-hidden bg-cover bg-center"
         style={{
-          backgroundImage: 'url("assets/images/image/login-page.jpg")', // Notice the leading slash
+          backgroundImage: 'url("assets/images/image/Data_Analysis.jpg")', // Notice the leading slash
           padding: '50px',
         }}
       >

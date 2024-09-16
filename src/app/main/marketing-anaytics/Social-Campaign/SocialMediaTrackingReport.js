@@ -298,11 +298,6 @@ export default function SocialMediaTrackingReport() {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={3}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -325,11 +320,6 @@ export default function SocialMediaTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -352,11 +342,6 @@ export default function SocialMediaTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -380,11 +365,6 @@ export default function SocialMediaTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -408,11 +388,6 @@ export default function SocialMediaTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             className="flex justify-center"
             component={motion.div}
             initial={{ x: 500 }}
@@ -427,11 +402,6 @@ export default function SocialMediaTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={8}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: 500 }}
             animate={{ x: 0 }}

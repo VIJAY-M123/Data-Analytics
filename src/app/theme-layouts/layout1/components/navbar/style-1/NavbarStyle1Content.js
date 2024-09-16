@@ -41,7 +41,7 @@ function NavbarStyle1Content(props) {
 
   return (
     <Root className={clsx('flex flex-auto flex-col overflow-hidden h-full', props.className)}>
-      <div className="flex flex-row items-center shrink-0 h-48 md:h-72 px-20 bg-[#334155]">
+      <div className="flex flex-row items-center shrink-0 h-48 md:h-72 px-20">
         <div className="flex flex-1 mx-4 gap-8">
           <Logo />
 
@@ -58,7 +58,7 @@ function NavbarStyle1Content(props) {
       </div>
 
       <StyledContent
-        className="flex flex-1 flex-col min-h-0 bg-[#334155]"
+        className="flex flex-1 flex-col min-h-0"
         // sx={{
         //   background: 'linear-gradient(145deg, #151c24, #0b485d)',
         // }}

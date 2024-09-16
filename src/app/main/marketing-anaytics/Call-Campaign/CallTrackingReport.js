@@ -248,11 +248,6 @@ export default function CallTrackingReport() {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={2.4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -275,11 +270,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={2.4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -302,11 +292,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={2.4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -330,11 +315,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={2.4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -358,11 +338,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6} lg={2.4}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: -500 }}
             animate={{ x: 0 }}
@@ -386,11 +361,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             component={motion.div}
             initial={{ x: 500 }}
             animate={{ x: 0 }}
@@ -409,11 +379,6 @@ export default function CallTrackingReport() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card
-            sx={{
-              background: 'linear-gradient(145deg, #d9dde0, #ffffff)',
-              boxShadow: '8px 8px 7px #e0e4e8, -8px -8px 7px #ffffff',
-              // padding: '16px', // Optional: padding for content inside the card
-            }}
             className="flex justify-center"
             component={motion.div}
             initial={{ x: 500 }}
