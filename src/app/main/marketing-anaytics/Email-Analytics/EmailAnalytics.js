@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, Typography } from '@mui/material';
+import { Button, Card, CardContent, Grid, Typography, useTheme } from '@mui/material';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import QuickreplyIcon from '@mui/icons-material/Quickreply';
 import * as yup from 'yup';
@@ -13,6 +13,8 @@ import BasicDatePicker from 'app/shared-components/DatePicker';
 import { yupResolver } from '@hookform/resolvers/yup';
 import ReactApexChart from 'react-apexcharts';
 import { motion } from 'framer-motion';
+import { selectContrastMainTheme } from 'app/store/fuse/settingsSlice';
+import { useSelector } from 'react-redux';
 
 const schema = yup.object().shape({
   fromDate: yup
@@ -40,6 +42,8 @@ const defaultValues = {
 };
 
 export default function EmailAnalytics() {
+  const theme = useTheme();
+  const contrastTheme = useSelector(selectContrastMainTheme(theme.palette.primary.main));
   const {
     control,
     formState: { errors },
@@ -102,23 +106,23 @@ export default function EmailAnalytics() {
         'Dec',
       ],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       title: {
         text: 'Clicks',
 
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     fill: {
@@ -207,22 +211,22 @@ export default function EmailAnalytics() {
         'Dec',
       ],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       title: {
         text: 'Opens',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     fill: {
@@ -320,8 +324,9 @@ export default function EmailAnalytics() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color="secondary"
             >
               Apply
             </Button>
@@ -516,9 +521,11 @@ export default function EmailAnalytics() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                        color="secondary"
                       >
                         This Year
                       </Button>
+                      
                       <Button
                         sx={{
                           minHeight: '20px',
@@ -527,6 +534,7 @@ export default function EmailAnalytics() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                        color="secondary"
                       >
                         Last Year
                       </Button>

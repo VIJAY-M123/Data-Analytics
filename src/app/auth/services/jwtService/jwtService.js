@@ -74,7 +74,13 @@ class JwtService extends FuseUtils.EventEmitter {
         .then((response) => {
           console.log('res', response);
           if (response.data.user) {
-            this.setSession(response.data.token);
+            const jwt_token = {
+              access_token:response.data.token,
+              username:email,
+              password,
+
+            }
+            this.setSession(jwtEncode(jwt_token,''));
             resolve(response.data.user);
             this.emit('onLogin', response.data.user);
           } else {
@@ -88,17 +94,17 @@ class JwtService extends FuseUtils.EventEmitter {
     // console.log('signInWithToken');
     return new Promise((resolve, reject) => {
       const decoded = jwtDecode(this.getAccessToken());
-      // console.log(decoded);
+      //console.log(decoded);
       axios
         .post(jwtServiceConfig.signIn, {
-          user_code: decoded.username,
-          user_pass: decoded.password,
+          email: decoded.username,
+          password: decoded.password,
         })
         .then((response) => {
           if (response.data) {
             // this.setSession(response.data.access_token);
-            response.data[0].user_code = decoded.username;
-            resolve(response.data);
+            response.data.user.email = decoded.username;
+            resolve(response.data.user);
           } else {
             this.logout();
             reject(new Error('Failed to login with token.'));
@@ -197,8 +203,6 @@ class JwtService extends FuseUtils.EventEmitter {
   };
 
   changePasswordandNewpassword = (data) => {
-    console.log(data);
-
     return new Promise((resolve, reject) => {
       axios
         .post(
@@ -224,16 +228,12 @@ class JwtService extends FuseUtils.EventEmitter {
               PS_NEW_PASS_C: data.confirmPassword,
               PS_NEW_PASS: data.newPassword,
             };
-            console.log('JWT Service', postData);
             axios
               .post(jwtServiceConfig.passwordChange, postData)
               .then((user) => {
-                console.log('Response', user);
-
                 // user.data[0].PS_UR_NAME = data.userName;
                 resolve(user.data);
                 this.emit('onSubmit', user);
-                console.log(user.data);
               })
               .catch(({ response: errRes }) => {
                 const message = 'This user does not exist';
@@ -245,7 +245,6 @@ class JwtService extends FuseUtils.EventEmitter {
           }
         })
         .catch(({ response }) => {
-          console.log(response.data.error_description);
           reject(response.data.error_description);
         });
     });

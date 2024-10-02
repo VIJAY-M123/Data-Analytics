@@ -8,6 +8,7 @@ import { selectUser } from 'app/store/userSlice';
 import Logo from 'app/theme-layouts/shared-components/Logo';
 import NavbarToggleButton from '../../../../shared-components/NavbarToggleButton';
 import Navigation from '../../../../shared-components/Navigation';
+import UserNavbarHeader from 'app/theme-layouts/shared-components/UserNavbarHeader';
 
 const Root = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -64,7 +65,7 @@ function NavbarStyle1Content(props) {
         // }}
         option={{ suppressScrollX: true, wheelPropagation: false }}
       >
-        {/* <UserNavbarHeader /> */}
+        <UserNavbarHeader />
 
         <Navigation layout="vertical" />
 

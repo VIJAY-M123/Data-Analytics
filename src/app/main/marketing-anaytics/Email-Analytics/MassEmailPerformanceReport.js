@@ -92,9 +92,9 @@ export default function MassEmailPerformanceReport() {
     xaxis: {
       type: 'year',
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: [
@@ -106,9 +106,9 @@ export default function MassEmailPerformanceReport() {
           },
         },
         labels: {
-          style: {
-            colors: 'var(--text-primary)',
-          },
+          // style: {
+          //   colors: 'var(--text-primary)',
+          // },
         },
       },
       {
@@ -120,9 +120,9 @@ export default function MassEmailPerformanceReport() {
           },
         },
         labels: {
-          style: {
-            colors: 'var(--text-primary)',
-          },
+          // style: {
+          //   colors: 'var(--text-primary)',
+          // },
         },
       },
     ],
@@ -191,7 +191,8 @@ export default function MassEmailPerformanceReport() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
+              color="secondary"
               type="submit"
             >
               Apply
@@ -364,6 +365,7 @@ export default function MassEmailPerformanceReport() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                        color="secondary"
                       >
                         This Year
                       </Button>
@@ -375,6 +377,7 @@ export default function MassEmailPerformanceReport() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                        color="secondary"
                       >
                         Last Year
                       </Button>

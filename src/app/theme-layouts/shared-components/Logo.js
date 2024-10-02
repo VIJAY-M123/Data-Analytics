@@ -24,7 +24,7 @@ function Logo() {
       <div className="w-full px-6 py-2 rounded">
         <img
           className="logo-icon w-full h-32"
-          src={key === 'zealit' ? 'assets/images/image/logo.jpg' : icon}
+          src={key === 'zealit' ? 'assets/images/image/FreeLancer.png' : icon}
           alt="logo"
         />
       </div>
