@@ -77,9 +77,9 @@ export default function SmsTrackingReport() {
     legend: {
       display: true,
       position: 'bottom',
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
     responsive: [
       {
@@ -148,16 +148,16 @@ export default function SmsTrackingReport() {
         '01-09-2023',
       ],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
   };
@@ -226,8 +226,9 @@ export default function SmsTrackingReport() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color='secondary'
             >
               Apply
             </Button>

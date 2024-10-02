@@ -112,22 +112,22 @@ export default function SocialMediaCampaign() {
         formatter(val) {
           return `${val}K`;
         },
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       title: {
         text: '',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     tooltip: {
@@ -144,9 +144,9 @@ export default function SocialMediaCampaign() {
       position: 'right',
       offsetX: -10,
       offsetY: 50,
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   };
 
@@ -214,8 +214,9 @@ export default function SocialMediaCampaign() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color='secondary'
             >
               Apply
             </Button>
@@ -223,7 +224,7 @@ export default function SocialMediaCampaign() {
         </Grid>
       </form>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} xl={4}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -294,7 +295,7 @@ export default function SocialMediaCampaign() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} xl={4}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -365,7 +366,7 @@ export default function SocialMediaCampaign() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} xl={4}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -436,7 +437,7 @@ export default function SocialMediaCampaign() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} xl={4}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
@@ -507,7 +508,7 @@ export default function SocialMediaCampaign() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={12} xl={8}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}

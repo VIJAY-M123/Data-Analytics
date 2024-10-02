@@ -80,9 +80,9 @@ export default function CallTrackingReport() {
     xaxis: {
       title: {
         text: 'Calls',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       categories: [
         'Paid',
@@ -95,22 +95,22 @@ export default function CallTrackingReport() {
         'Referral',
       ],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       title: {
         text: 'Source',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
   };
@@ -154,9 +154,9 @@ export default function CallTrackingReport() {
     legend: {
       display: true,
       position: 'bottom',
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
     responsive: [
       {
@@ -237,8 +237,9 @@ export default function CallTrackingReport() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color='secondary'
             >
               Apply
             </Button>

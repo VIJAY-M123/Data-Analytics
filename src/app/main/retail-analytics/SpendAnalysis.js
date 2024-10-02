@@ -121,7 +121,7 @@ export default function SpendAnalysis() {
         </Grid>
       </form>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -143,7 +143,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -165,7 +165,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -187,7 +187,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -209,7 +209,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
@@ -232,7 +232,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
@@ -255,7 +255,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
@@ -277,7 +277,7 @@ export default function SpendAnalysis() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} md={6} lg={4} xl={3}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}

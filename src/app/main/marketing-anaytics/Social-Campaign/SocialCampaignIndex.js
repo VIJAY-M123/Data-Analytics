@@ -17,15 +17,15 @@ export default function SocialCampaignIndex() {
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label="Social Media Campaign" value="1" />
-              <Tab label="Social Media Tracking Report" value="2" />
+            <Tab label="Social Media Tracking Report" value="1" />
+              <Tab label="Social Media Campaign" value="2" />
             </TabList>
           </Box>
           <TabPanel value="1">
-            <SocialMediaCampaign />
+            <SocialMediaTrackingReport />
           </TabPanel>
           <TabPanel value="2">
-            <SocialMediaTrackingReport />
+            <SocialMediaCampaign />
           </TabPanel>
         </TabContext>
       </Box>

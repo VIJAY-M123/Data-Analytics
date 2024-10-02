@@ -80,9 +80,9 @@ export default function CallCampaignReport() {
     legend: {
       display: true,
       position: 'bottom',
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
     responsive: [
       {
@@ -150,16 +150,16 @@ export default function CallCampaignReport() {
     legend: {
       display: true,
       position: 'bottom',
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
     xaxis: {
       type: 'datetime',
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
 
@@ -167,28 +167,28 @@ export default function CallCampaignReport() {
       {
         title: {
           text: 'Total Calls',
-          style: {
-            color: 'var(--text-primary)',
-          },
+          // style: {
+          //   color: 'var(--text-primary)',
+          // },
         },
         labels: {
-          style: {
-            colors: 'var(--text-primary)',
-          },
+          // style: {
+          //   colors: 'var(--text-primary)',
+          // },
         },
       },
       {
         opposite: true,
         title: {
           text: 'Abandoned Calls',
-          style: {
-            color: 'var(--text-primary)',
-          },
+          // style: {
+          //   color: 'var(--text-primary)',
+          // },
         },
         labels: {
-          style: {
-            colors: 'var(--text-primary)',
-          },
+          // style: {
+          //   colors: 'var(--text-primary)',
+          // },
         },
       },
     ],
@@ -257,8 +257,9 @@ export default function CallCampaignReport() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color='secondary'
             >
               Apply
             </Button>
@@ -472,6 +473,7 @@ export default function CallCampaignReport() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                          color='secondary'
                       >
                         This Month
                       </Button>
@@ -483,6 +485,7 @@ export default function CallCampaignReport() {
                         }}
                         variant="contained"
                         className="rounded-md"
+                          color='secondary'
                       >
                         Last Month
                       </Button>

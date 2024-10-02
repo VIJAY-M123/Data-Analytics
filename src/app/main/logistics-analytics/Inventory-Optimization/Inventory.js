@@ -275,7 +275,7 @@ export default function Inventory() {
   return (
     <div className="p-24">
       <Grid container spacing={2}>
-        <Grid item xs={12} md={2.5}>
+        <Grid item xs={12} md={3} xl={2.5}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Card
@@ -323,7 +323,7 @@ export default function Inventory() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={2.5}>
+        <Grid item xs={12} md={3} xl={2.5}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Card
@@ -369,7 +369,7 @@ export default function Inventory() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={6} xl={7}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
@@ -384,7 +384,7 @@ export default function Inventory() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6} xl={5}>
           <Card
             component={motion.div}
             initial={{ x: -500 }}
@@ -397,7 +397,7 @@ export default function Inventory() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={6} xl={5}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}

@@ -87,22 +87,22 @@ export default function SocialMediaTrackingReport() {
     xaxis: {
       categories: ['01-02-2023', '01-03-2023', '01-04-2023', '01-05-2023', '01-06-2023'],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       title: {
         text: 'Number of Issues',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     //     fill: {
@@ -199,24 +199,24 @@ export default function SocialMediaTrackingReport() {
       type: 'year',
       categories: ['01-02-2023', '01-03-2023', '01-04-2023', '01-05-2023', '01-06-2023'],
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     yaxis: {
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
     legend: {
       position: 'bottom',
       offsetY: 5,
-      labels: {
-        colors: 'var(--text-primary)',
-      },
+      // labels: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
     fill: {
       opacity: 1,
@@ -287,8 +287,9 @@ export default function SocialMediaTrackingReport() {
           >
             <Button
               variant="contained"
-              className="rounded-md bg-black text-white hover:bg-gray-500 hover:text-black"
+              className="rounded-md"
               type="submit"
+              color='secondary'
             >
               Apply
             </Button>
@@ -386,7 +387,7 @@ export default function SocialMediaTrackingReport() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={5} xl={4}>
           <Card
             className="flex justify-center"
             component={motion.div}
@@ -400,7 +401,7 @@ export default function SocialMediaTrackingReport() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid item xs={12} md={6} lg={7} xl={4}>
           <Card
             component={motion.div}
             initial={{ x: 500 }}
