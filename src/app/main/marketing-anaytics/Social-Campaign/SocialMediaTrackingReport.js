@@ -134,6 +134,7 @@ export default function SocialMediaTrackingReport() {
           return `$ ${val} thousands`;
         },
       },
+      theme:"dark"
     },
   };
   const seriesstack = [
@@ -220,6 +221,9 @@ export default function SocialMediaTrackingReport() {
     },
     fill: {
       opacity: 1,
+    },
+    tooltip: {
+      theme: "dark"
     },
   };
 

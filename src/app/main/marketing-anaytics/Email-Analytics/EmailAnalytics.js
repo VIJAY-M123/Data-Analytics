@@ -154,6 +154,7 @@ export default function EmailAnalytics() {
           return `₹ ${val} %`;
         },
       },
+      theme: "dark"
     },
   };
 
@@ -258,6 +259,7 @@ export default function EmailAnalytics() {
           return `₹ ${val} %`;
         },
       },
+      theme: "dark"
     },
   };
 

@@ -66,11 +66,9 @@ const salesOptions = {
     type: 'year',
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
   },
-  // tooltip: {
-  //   x: {
-  //     format: 'dd/MM/yy HH:mm',
-  //   },
-  // },
+  tooltip: {
+    theme: "dark"
+  },
 };
 
 export default function CustomerReport() {

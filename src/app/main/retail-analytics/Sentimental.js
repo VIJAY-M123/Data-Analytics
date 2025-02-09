@@ -100,16 +100,16 @@ const optionsstack = {
     type: 'year',
     categories: ['2016', '2018', '2020', '2022', '2024'],
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   yaxis: {
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
       formatter(val) {
         return `${val} K`;
       },
@@ -121,12 +121,15 @@ const optionsstack = {
   legend: {
     position: 'bottom',
     offsetY: 5,
-    labels: {
-      colors: 'var(--text-primary)',
-    },
+    // labels: {
+    //   colors: 'var(--text-primary)',
+    // },
   },
   fill: {
     opacity: 1,
+  },
+  tooltip: {
+    theme: "dark"
   },
 };
 
@@ -184,22 +187,22 @@ const productOption = {
       // formatter(val) {
       //   return `${val}K`;
       // },
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   yaxis: {
     title: {
       text: '',
-      style: {
-        color: 'var(--text-primary)',
-      },
+      // style: {
+      //   color: 'var(--text-primary)',
+      // },
     },
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   tooltip: {
@@ -208,6 +211,7 @@ const productOption = {
         return `${val}K`;
       },
     },
+    theme:"dark"
   },
   fill: {
     opacity: 1,
@@ -216,9 +220,9 @@ const productOption = {
     position: 'right',
     offsetX: -10,
     offsetY: 50,
-    labels: {
-      colors: 'var(--text-primary)',
-    },
+    // labels: {
+    //   colors: 'var(--text-primary)',
+    // },
   },
 };
 

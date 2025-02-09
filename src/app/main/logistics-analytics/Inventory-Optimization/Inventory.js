@@ -70,27 +70,30 @@ const optionsstack = {
     type: 'year',
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   yaxis: {
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   legend: {
     position: 'bottom',
     offsetY: 5,
-    labels: {
-      colors: 'var(--text-primary)',
-    },
+    // labels: {
+    //   colors: 'var(--text-primary)',
+    // },
   },
   fill: {
     opacity: 1,
+  },
+  tooltip: {
+    theme: "dark"
   },
 };
 
@@ -136,16 +139,16 @@ const callCategoryOption = {
   legend: {
     display: true,
     position: 'bottom',
-    labels: {
-      colors: 'var(--text-primary)',
-    },
+    // labels: {
+    //   colors: 'var(--text-primary)',
+    // },
   },
   xaxis: {
     type: 'year',
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
 
@@ -153,13 +156,13 @@ const callCategoryOption = {
     {
       title: {
         text: 'Distance',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
         labels: {
-          style: {
-            colors: 'var(--text-primary)',
-          },
+          // style: {
+          //   colors: 'var(--text-primary)',
+          // },
         },
       },
     },
@@ -167,17 +170,20 @@ const callCategoryOption = {
       opposite: true,
       title: {
         text: 'Fuel_Cost',
-        style: {
-          color: 'var(--text-primary)',
-        },
+        // style: {
+        //   color: 'var(--text-primary)',
+        // },
       },
       labels: {
-        style: {
-          colors: 'var(--text-primary)',
-        },
+        // style: {
+        //   colors: 'var(--text-primary)',
+        // },
       },
     },
   ],
+  tooltip: {
+    theme: "dark"
+  },
 };
 
 const openSeries = [
@@ -221,22 +227,22 @@ const openOption = {
   xaxis: {
     categories: ['Empty', 'Liquids', 'Goods', 'Passenger'],
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   yaxis: {
     title: {
       text: 'Placeholders',
-      style: {
-        color: 'var(--text-primary)',
-      },
+      // style: {
+      //   color: 'var(--text-primary)',
+      // },
     },
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   fill: {
@@ -268,6 +274,7 @@ const openOption = {
         return `₹ ${val} %`;
       },
     },
+    theme:"dark"
   },
 };
 

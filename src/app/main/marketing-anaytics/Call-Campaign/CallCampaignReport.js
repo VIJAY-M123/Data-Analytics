@@ -97,6 +97,9 @@ export default function CallCampaignReport() {
         },
       },
     ],
+    tooltip: {
+      theme: "dark"
+    },
   };
 
   const callCategorySeries = [
@@ -192,6 +195,9 @@ export default function CallCampaignReport() {
         },
       },
     ],
+    tooltip: {
+      theme: "dark"
+    },
   };
 
   const onSubmit = (data) => {

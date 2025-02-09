@@ -102,9 +102,9 @@ const optionsstack = {
     type: 'year',
     categories: ['2016', '2018', '2020', '2022', '2024'],
     labels: {
-      style: {
-        colors: 'var(--text-primary)',
-      },
+      // style: {
+      //   colors: 'var(--text-primary)',
+      // },
     },
   },
   yaxis: {
@@ -124,12 +124,15 @@ const optionsstack = {
   legend: {
     position: 'bottom',
     offsetY: 5,
-    labels: {
-      colors: 'var(--text-primary)',
-    },
+    // labels: {
+    //   colors: 'var(--text-primary)',
+    // },
   },
   fill: {
     opacity: 1,
+  },
+  tooltip: {
+    theme: "dark"
   },
 };
 export default function CustomerBehavior() {

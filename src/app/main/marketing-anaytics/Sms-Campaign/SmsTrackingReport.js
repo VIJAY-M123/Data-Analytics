@@ -74,6 +74,9 @@ export default function SmsTrackingReport() {
         },
       },
     },
+    tooltip: {
+      theme: "dark"
+    },
     legend: {
       display: true,
       position: 'bottom',
@@ -159,6 +162,9 @@ export default function SmsTrackingReport() {
         //   colors: 'var(--text-primary)',
         // },
       },
+    },
+    tooltip: {
+      theme: "dark"
     },
   };
 

@@ -101,9 +101,9 @@ export default function MassEmailPerformanceReport() {
       {
         title: {
           text: 'Hard Bounce Count',
-          style: {
-            color: 'var(--text-primary)',
-          },
+          // style: {
+          //   color: 'var(--text-primary)',
+          // },
         },
         labels: {
           // style: {
@@ -115,9 +115,9 @@ export default function MassEmailPerformanceReport() {
         opposite: true,
         title: {
           text: 'Soff bounce count',
-          style: {
-            color: 'var(--text-primary)',
-          },
+          // style: {
+          //   color: 'var(--text-primary)',
+          // },
         },
         labels: {
           // style: {
@@ -126,6 +126,9 @@ export default function MassEmailPerformanceReport() {
         },
       },
     ],
+    tooltip: {
+      theme: "dark"
+    },
   };
 
   const onSubmit = (data) => {

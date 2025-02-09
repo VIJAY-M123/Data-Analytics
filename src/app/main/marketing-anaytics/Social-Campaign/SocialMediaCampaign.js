@@ -136,10 +136,12 @@ export default function SocialMediaCampaign() {
           return `${val}K`;
         },
       },
+      theme:"dark"
     },
     fill: {
       opacity: 1,
     },
+    
     legend: {
       position: 'right',
       offsetX: -10,

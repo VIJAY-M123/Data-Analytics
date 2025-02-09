@@ -138,10 +138,17 @@ const navigationConfig = [
         // translate: 'Marketing 123rtrwrw',
         children: [
           {
-            id: 'logistic.email',
+            id: 'logistic.inventory',
             title: 'Inventory Analytics',
             type: 'item',
             url: 'logistic/inventory',
+            // end: true,
+          },
+          {
+            id: 'logistic.supplier',
+            title: 'Supplier Analytics',
+            type: 'item',
+            url: 'logistic/supplier',
             // end: true,
           },
         ],

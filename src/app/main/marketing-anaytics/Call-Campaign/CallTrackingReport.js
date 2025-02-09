@@ -113,6 +113,9 @@ export default function CallTrackingReport() {
         // },
       },
     },
+    tooltip: {
+      theme: "dark"
+    },
   };
 
   const distributionSeries = [44, 13, 20, 30, 23, 40, 18.3];
@@ -150,6 +153,9 @@ export default function CallTrackingReport() {
           size: '65%',
         },
       },
+    },
+    tooltip: {
+      theme: "dark"
     },
     legend: {
       display: true,
